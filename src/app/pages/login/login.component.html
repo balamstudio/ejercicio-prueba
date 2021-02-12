@@ -1,0 +1,25 @@
+<main class="flex-shrink-0">
+    <div class="container">
+        <form class="form-signin" [formGroup]="forma" (ngSubmit)="onSubmit()">
+            <h3 class="mb-3 text-center">Bienvenido</h3>
+            <p>¡Hola! bienvenidos a XXXXX </p>
+            <p>Para ingresar es necesario iniciar sesión.</p>
+
+            <label>Correo</label>
+            <input type="email" class="form-control mb-2" placeholder="Correo" formControlName="email">
+
+            <label>Contraseña</label>
+            <input type="password" class="form-control mb-2" placeholder="Contraseña" formControlName="pass">
+
+            <button class="btn btn-primary btn-block mb-2" type="submit">Entrar</button>
+            <div *ngIf="formError" class="alert alert-danger mt-3" role="alert">
+                {{formMsj}}
+            </div>
+
+            <div *ngIf="formsucces" class="alert alert-success mt-3" role="alert">
+                Logeado
+            </div>
+
+        </form>
+    </div>
+</main>
